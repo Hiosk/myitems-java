@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyItems</title>
+
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="main-menu">
+        <ul>
+            <li>
+                <img src="./assets/logo.png" alt="" width="128px">
+            </li>
+            <hr>
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i>
+                    <span class="nav-text">
+                        Início
+                    </span>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="/catalogo">
+                    <i class="fa fa-shopping-basket"></i>
+                    <span class="nav-text">
+                        Catálogo
+                    </span>
+                </a>
+
+            </li>
+            <li class="has-subnav">
+                <a href="/biblioteca">
+                    <i class="fa fa-th-large"></i>
+                    <span class="nav-text">
+                        Biblioteca
+                    </span>
+                </a>
+            </li>
+            <hr>
+        </ul>
+        <ul class="logout">
+            <hr>
+            <li>
+                <a href="/admin">
+                    <i class="fas fa-user"></i>
+                    <span class="nav-text">
+                        Conta
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="/desconectar">
+                    <i class="fa fa-power-off"></i>
+                    <span class="nav-text">
+                        Logout
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="principal">
+        <div class="modal fade itemInfo" id="itemInfo_0" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">The Evil Within</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="https://i.postimg.cc/85GV0Gqg/steam-card-19.jpg" alt="">
+                        <div class="conteudo">
+                            <span class="preco">R$ 37,99</span>
+                            <p>Developed by Shinji Mikami -- creator of the seminal Resident Evil series -- and the
+                                talented team at Tango Gameworks, The Evil Within embodies the meaning of pure survival
+                                horror. Highly-crafted environments, horrifying anxiety, and an intricate story are
+                                combined to create an immersive world that will bring you to the height of tension. With
+                                limited resources at your disposal, you’ll fight for survival and experience profound
+                                fear in this perfect blend of horror and action.</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="welcome">
+            <h1>Bem vindo ao MyItems!</h1>
+            <p>Sua biblioteca de jogos favorita.
+                <br>
+                Projeto criado para trabalho facultativo da matéria de programação orientada a objetos em Java
+                (ARA0075/3671625) 3001, ministrada pelo professor Pablo Rangel.
+            </p>
+        </div>
+        <br><br>
+        <h2 class="titulo">Novidades</h2>
+        <div class="novidades">
+            <div class="d-steam-card-wrapper">
+                <div class="d-steam-card js-steamCard"
+                    style="background-image: url('https://i.postimg.cc/85GV0Gqg/steam-card-19.jpg')"
+                    data-bs-toggle="modal" data-bs-target="#itemInfo_0"></div>
+            </div>
+            <div class="d-steam-card-wrapper">
+                <div class="d-steam-card js-steamCard"
+                    style="background-image: url('https://i.postimg.cc/jSGTyPc5/steam-card-18.jpg')"></div>
+            </div>
+            <div class="d-steam-card-wrapper">
+                <div class="d-steam-card js-steamCard"
+                    style="background-image: url('https://i.postimg.cc/GmBrBqkV/steam-card-17.jpg')"></div>
+            </div>
+            <div class="d-steam-card-wrapper">
+                <div class="d-steam-card js-steamCard"
+                    style="background-image: url('https://i.postimg.cc/pXcRXgnK/steam-card-16.jpg')"></div>
+            </div>
+            <div class="d-steam-card-wrapper">
+                <div class="d-steam-card js-steamCard"
+                    style="background-image: url('https://i.postimg.cc/05f9h6kW/steam-card-15.jpg')"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

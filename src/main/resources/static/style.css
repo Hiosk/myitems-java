@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111111 !important;
+}
+
+a {
+    text-decoration: none !important;
+    color: unset;
+    margin: unset;
+    font-size: unset;
+    font-family: unset;
+}
+
+.fa,
+.fas {
+    position: relative;
+    display: table-cell;
+    width: 60px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 26px;
+    padding: 10px 0;
+}
+
+
+.main-menu:hover,
+nav.main-menu.expanded {
+    width: 250px;
+    overflow: visible;
+}
+
+.main-menu {
+    background: #111111;
+    border-right: 1px solid #e5e5e5;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    width: 60px;
+    overflow: hidden;
+    -webkit-transition: width .05s linear;
+    transition: width .05s linear;
+    -webkit-transform: translateZ(0) scale(1, 1);
+    z-index: 1000;
+}
+
+.main-menu>ul {
+    margin: 7px 0;
+}
+
+.main-menu li {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    font-weight: 800;
+}
+
+.main-menu li>a {
+    position: relative;
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: #999;
+    font-family: arial;
+    font-size: 14px;
+    text-decoration: none;
+    -webkit-transform: translateZ(0) scale(1, 1);
+    -webkit-transition: all .1s linear;
+    transition: all .1s linear;
+
+}
+
+.main-menu .nav-text {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    width: 190px;
+    font-family: sans-serif;
+}
+
+.main-menu>ul.logout {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.no-touch .scrollable.hover {
+    overflow-y: hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+    overflow-y: auto;
+    overflow: visible;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+nav {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+nav ul,
+nav li {
+    outline: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu li:hover>a,
+nav.main-menu li.active>a,
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus,
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:hover,
+.dropdown-menu>.active>a:focus,
+.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
+.dashboard-page nav.dashboard-menu ul li.active a {
+    color: #fff;
+    background-color: #3a3a3a;
+}
+
+.principal .welcome {
+    width: 70%;
+    min-height: 60vh;
+    border: 1px solid rgba(129, 129, 129, 0.3);
+    border-radius: 8px;
+    margin: 0 15%;
+    background: url("https://wallpapercave.com/wp/wp9093720.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.principal .welcome h1 {
+    margin: 5%;
+    color: white;
+    font-size: 36px;
+    font-family: sans-serif;
+}
+
+.principal .welcome p {
+    width: 55%;
+    text-align: right;
+    margin: 0 5%;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: white;
+}
+
+.titulo {
+    width: 70%;
+    margin: 0 15%;
+    color: rgb(204, 204, 204);
+    padding-bottom: 8px;
+    font-family: sans-serif;
+    border-bottom: 2px solid rgba(129, 129, 129, 0.3);
+}
+
+
+.novidades,
+.catalogo {
+    width: 70%;
+    min-height: 256px;
+    margin: 0 16%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.d-steam-card-wrapper {
+    max-width: 250px;
+    min-width: 150px;
+    margin: 0;
+    flex: 0 1 16.66%;
+    padding: 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .d-steam-card-wrapper {
+        flex-basis: 20%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .d-steam-card-wrapper {
+        flex-basis: 25%;
+    }
+}
+
+.d-steam-card {
+    padding: 0 0 150% 0;
+    background: url('') no-repeat transparent 50% 50%;
+    background-size: cover;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 10px -2px rgba(0, 0, 0, 0.5);
+    transition: all ease 0.28s 0.01s;
+    transform: perspective(222px) translate3d(0px, 5px, 0px) rotateX(0deg);
+    perspective-origin: top;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.d-steam-card::before {
+    width: 100%;
+    height: 172%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-image: linear-gradient(35deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 51.5%, rgba(255, 255, 255, 0.15) 54%, rgba(255, 255, 255, 0.15) 100%);
+    transform: translateY(-36%);
+    opacity: 0.5;
+    transition: all ease 0.28s 0.01s;
+    cursor: pointer;
+}
+
+.d-steam-card:hover,
+.d-steam-card:focus {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transform: perspective(222px) translate3d(0px, 0px, 8px) rotateX(3deg);
+    transform-origin: center;
+    box-shadow: 0 14px 16px -2px rgba(0, 0, 0, 0.5);
+}
+
+.d-steam-card:hover::before,
+.d-steam-card:focus::before {
+    opacity: 1;
+    transform: translateY(-20%);
+}
+
+.d-steam-card:active {
+    filter: brightness(80%) contrast(110%);
+}
+
+.portal {
+    width: 70%;
+    min-height: 256px;
+    margin: 0 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    border-radius: 8px;
+}
+
+.contaCRUD {
+    width: 47.5%;
+    border: 2px solid rgba(129, 129, 129, 0.3);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    margin: 8px 0;
+}
+
+.contaCRUD h1 {
+    color: rgba(129, 129, 129, 1);
+    margin: 5%;
+    width: 90%;
+    border-bottom: 2px solid rgba(129, 129, 129, 1);
+}
+
+.contaCRUD h2 {
+    margin: 2.5% 5%;
+    color: rgba(129, 129, 129, 1);
+}
+
+.contaCRUD input[type="text"],
+.contaCRUD input[type="number"] {
+    width: 90%;
+    margin: 0 5%;
+    font-size: 18px;
+    padding: 4px 8px;
+    background-color: rgba(129, 129, 129, 1);
+}
+
+.contaCRUD button {
+    width: 40%;
+    margin: 5%;
+    font-size: 18px;
+    padding: 4px 8px;
+    background-color: rgba(129, 129, 129, 1);
+    outline: none;
+    box-shadow: none;
+    font-family: sans-serif;
+    font-weight: 750;
+    color: rgba(0, 0, 0, 0.75);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.itemInfo .modal-dialog .modal-content {
+    background-color: rgb(22, 22, 22);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.39);
+}
+
+.itemInfo .modal-dialog .modal-content .btn-close {
+    background-color: white;
+}
+
+.itemInfo .modal-dialog .modal-content .modal-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.itemInfo .modal-dialog .modal-content .modal-body .conteudo {
+    padding: 0 32px;
+}
+
+.itemInfo .modal-dialog .modal-content .modal-body .conteudo .preco {
+    font-size: 24px;
+    color: #1AC100;
+}
+
+.itemInfo .modal-dialog .modal-content .modal-body img {
+    height: 256px;
+}

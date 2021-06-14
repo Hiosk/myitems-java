@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyItems</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="main-menu">
+        <ul>
+            <li>
+                <img src="./assets/logo.png" alt="" width="128px">
+            </li>
+            <hr>
+            <li>
+                <a href="/">
+                    <i class="fa fa-home"></i>
+                    <span class="nav-text">
+                            Início
+                        </span>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="/catalogo">
+                    <i class="fa fa-shopping-basket"></i>
+                    <span class="nav-text">
+                            Catálogo
+                        </span>
+                </a>
+
+            </li>
+            <li class="has-subnav">
+                <a href="/biblioteca">
+                    <i class="fa fa-th-large"></i>
+                    <span class="nav-text">
+                            Biblioteca
+                        </span>
+                </a>
+            </li>
+            <hr>
+        </ul>
+        <ul class="logout">
+            <hr>
+            <li>
+                <a href="/admin">
+                    <i class="fas fa-user"></i>
+                    <span class="nav-text">
+                            Conta
+                        </span>
+                </a>
+            </li>
+            <li>
+                <a href="/desconectar">
+                    <i class="fa fa-power-off"></i>
+                    <span class="nav-text">
+                            Logout
+                        </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <section class="principal">
+        <div class="modal fade itemInfo" th:id="|modal-${jModal.id}|" tabindex="-1" aria-hidden="true" th:each="jModal : ${listaJogos}">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" th:text="${jModal.titulo}"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img th:src="@{${jModal.urlImg}}" alt="">
+                        <div class="conteudo">
+                            <span class="preco" th:text="|R$ ${jModal.preco}|"></span>
+                            <p th:text="${jModal.descricao}"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Comprar</button>
+                        <a th:href="@{/editarJogo/{id}(id=${jModal.id})}" class="btn btn-primary">Editar</a>
+                        <a th:href="@{/excluirJogo/{id}(id=${jModal.id})}" class="btn btn-danger">Excluir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <h2 class="titulo">Catálogo</h2>
+        <div class="catalogo">
+            <div class="d-steam-card-wrapper" th:each="j : ${listaJogos}" data-bs-toggle="modal" th:data-bs-target="|#modal-${j.id}|">
+                <div class="d-steam-card js-steamCard" th:style="'background: url('+ @{${j.urlImg}} +') center / cover;'"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script th:inline="javascript">
+        var jogos = [[${listaJogos}]];
+        console.log(jogos)
+    </script>
+</body>
+
+</html>

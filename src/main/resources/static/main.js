@@ -1,0 +1,3 @@
+function comprarJogo(x) {
+
+}
